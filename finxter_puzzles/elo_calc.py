@@ -15,7 +15,6 @@ print("You are currently on puzzle " + str(current_puzzle) + ".")
 def elo_calc(elo):
     print("This is your current elo: " + str(elo))
     correct = input("Did you get the question correct? (y/n)     ")
-    print(correct)
     if correct == "y":
         if elo <= 499:
             elo += 46
