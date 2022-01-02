@@ -1,8 +1,15 @@
-'''This should work to create a script which will calculate my elo for puzzles with finxter and then output them to a file.'''
-
+'''This script is used to track elo progress in the puzzles from the book "Coffee Break Python".
+   The script will find the current elo from a file "elo.txt" and then ask the user if they got the question right or wrong.
+   After the user answers, the script will modify the elo value in the .txt file'''
+   
+   
+   
+# The .txt file has yet to be integrated and as such the elo will be set to whatever the user wants.
+# Also, the current puzzle will always be set to one until the .txt file is set up.
 current_puzzle = 1
 print("You are currently on puzzle " + str(current_puzzle) + ".")
-#elo = input("Did you get the puzzle correct? Y/N") #flag...this is not the right code come back later
+
+#functions
 
 #function to calculate the elo and return the new value
 def elo_calc(elo):
@@ -36,5 +43,5 @@ def elo_calc(elo):
         exit()
     print("Your new elo is:     " + str(elo))
         
-
-elo_calc(1500)
+x = int(input("What elo do you have?     "))
+elo_calc(x)
