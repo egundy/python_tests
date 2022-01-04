@@ -1,15 +1,11 @@
 '''This script is used to track elo progress in the puzzles from the book "Coffee Break Python".
-   The script will find the current elo from a file "elo.txt" and then ask the user if they got the question right or wrong.
-   After the user answers, the script will modify the elo value in the .txt file'''
+   The script will find the current elo from a file "elo.csv" and then ask the user if they got the question right or wrong.
+   After the user answers, the script will modify the elo value in the .csv file'''
 
-# First test of txt file integration
-file = open('elo.txt' , "r+")
-current_elo = (file.read(1))
-current_puzzle = (file.read(2))
-print(current_puzzle , current_elo)
-print("You are currently on puzzle " + str(current_puzzle) + ".")
-
-
+# First test of csv file integration
+file = open('elo.csv')
+print(file.read(1))
+print(file.read(2))
 #function to calculate the elo and return the new value
 def elo_calc(elo):
     print("This is your current elo: " + str(elo))
@@ -42,4 +38,4 @@ def elo_calc(elo):
     print("Your new elo is:     " + str(elo))
         
 
-elo_calc(int(current_elo))
+elo_calc(int(data[1]))
