@@ -1,14 +1,14 @@
 '''This script is used to track elo progress in the puzzles from the book "Coffee Break Python".
-   The script will find the current elo from a file "elo.csv" and then ask the user if they got the question right or wrong.
-   After the user answers, the script will modify the elo value in the .csv file'''
+   The script will find the current elo from a file "elo.pickle" and then ask the user if they got the question right or wrong.
+   After the user answers, the script will modify the elo value in the .pickle file'''
+import pickle
+with open("elo.pickle" , "rb") as f:
+    elo , puzzle = pickle.load(f)
 
-# First test of csv file integration
-file = open('elo.csv')
-print(file.read(1))
-print(file.read(2))
 #function to calculate the elo and return the new value
-def elo_calc(elo):
+def elo_calc(elo , puzzle):
     print("This is your current elo: " + str(elo))
+    print("This is your current puzzle:     " + str(puzzle))
     correct = input("Did you get the question correct? (y/n)     ")
     if correct == "y":
         if elo <= 499:
@@ -35,7 +35,10 @@ def elo_calc(elo):
     else:
         print("unknown entry please run the program again")
         exit()
+    puzzle += 1
+    with open("elo.pickle" , 'wb') as f:
+        pickle.dump([elo , puzzle] , f)
     print("Your new elo is:     " + str(elo))
-        
+    print("Your new puzzle is:      " + str(puzzle))
 
-elo_calc(int(data[1]))
+elo_calc(elo,puzzle)
