@@ -2,8 +2,58 @@
    The script will find the current elo from a file "elo.pickle" and then ask the user if they got the question right or wrong.
    After the user answers, the script will modify the elo value in the .pickle file'''
 import pickle
+
 with open("elo.pickle" , "rb") as f:
     elo , puzzle = pickle.load(f)
+
+
+#pattern matching for elo calcuation to corresponding puzzle difficulty
+match puzzle:
+    case puzzle_1:
+        pass
+    case puzzle_2:
+        pass
+    case puzzle_3:
+        pass
+    case puzzle_4:
+        pass
+    case puzzle_5:
+        pass
+    case puzzle_6:
+        pass
+    case puzzle_8:
+        pass
+    case puzzle_9:
+        pass
+    case puzzle_10:
+        pass
+    case puzzle_11:
+        pass
+    case puzzle_12:
+        pass
+    case puzzle_13:
+        pass
+    case puzzle_14:
+        pass
+    case puzzle_15:
+        pass
+    case puzzle_16:
+        pass
+    case puzzle_17:
+        pass
+    case puzzle_18:         #there has to be a better way than this right?
+        pass
+    case puzzle_19:
+        pass
+    case puzzle_20:
+        pass
+    case puzzle_21:
+        pass
+    case puzzle_22:
+        pass
+    case puzzle_22
+    
+
 
 #function to calculate the elo and return the new value
 def elo_calc(elo , puzzle):
