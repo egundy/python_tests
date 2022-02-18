@@ -51,7 +51,14 @@ match puzzle:
         pass
     case puzzle_22:
         pass
-    case puzzle_22
+    case puzzle_22:
+        pass
+    case puzzle_23:
+        pass
+    case puzzle_24:
+        pass
+    case puzzle_25:
+        pass
     
 
 
