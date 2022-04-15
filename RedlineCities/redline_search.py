@@ -51,7 +51,7 @@ def search_type(type):
         case _: 
             return "Unable to search for that category"
   
-# main       
+# main
 type = input("What category do you want to search for?\n(Options: state, city, year) press 'enter' to exit\n\n")
 if type == ():
     exit
