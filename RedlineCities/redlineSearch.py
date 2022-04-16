@@ -5,30 +5,30 @@
 import pandas as pd
 
 # dataframe
-df = pd.read_csv('redlining.csv')
+df = pd.read_csv('redlinedCities.csv')
 
 # search functions
 # state search
 def state_search():
     print("\nYou chose: state search")
-    state = input("What state do you want to search for? (Abbreviation only) press 'enter' to exit\n")
-    if state == ():
+    state = input("What state do you want to search for? (Abbreviation only) type 'exit' to exit\n")
+    if state == ('exit'):
         exit
     else:
         print(df[df["state"] == state])
 # city search
 def city_search():
     print("\nYou chose: city search")
-    city = input("What city do you want to search for? press 'enter' to exit\n")
-    if city == ():
+    city = input("What city do you want to search for? type 'exit' to exit\n")
+    if city == ('exit'):
         exit
     else:
         print(df[df["city"] == city])
 # year search
 def year_search():
     print("\nYou chose: year search")
-    year = input("What year do you want to search for? press 'enter' to exit\n")
-    if year == ():
+    year = input("What year do you want to search for? type 'exit' to exit\n")
+    if year == ('exit'):
         exit
     else:
         print(df[df["year"] == year])
@@ -52,7 +52,9 @@ def search_type(type):
             return "Unable to search for that category"
   
 # main
-type = input("What category do you want to search for?\n(Options: state, city, year) press 'enter' to exit\n\n")
-if type == ():
-    exit
-search_type(type)
+n = 0
+while n == 0:
+    type = input("What category do you want to search for?\n(Options: state, city, year) type 'exit' to exit\n\n")
+    if type == ('exit'):
+        n = 1
+    search_type(type)
