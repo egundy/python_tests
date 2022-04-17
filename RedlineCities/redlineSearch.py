@@ -10,28 +10,34 @@ df = pd.read_csv('redlinedCities.csv')
 # search functions
 # state search
 def state_search():
-    print("\nYou chose: state search")
-    state = input("What state do you want to search for? (Abbreviation only) type 'exit' to exit\n")
-    if state == ('exit'):
-        exit
-    else:
-        print(df[df["state"] == state])
+    n = 0
+    while n == 0:
+        print("\nYou chose: state search")
+        state = input("What state do you want to search for? (Abbreviation only) type 'back' to return to category selector\n")
+        if state == ('exit'):
+            n = 1
+        else:
+            print(df[df["state"] == state])
 # city search
 def city_search():
-    print("\nYou chose: city search")
-    city = input("What city do you want to search for? type 'exit' to exit\n")
-    if city == ('exit'):
-        exit
-    else:
-        print(df[df["city"] == city])
+    n = 0
+    while n == 0:
+        print("\nYou chose: city search")
+        city = input("What city do you want to search for? type 'back' to return to category selector\n")
+        if city == ('back'):
+            n = 1
+        else:
+            print(df[df["city"] == city])
 # year search
 def year_search():
-    print("\nYou chose: year search")
-    year = input("What year do you want to search for? type 'exit' to exit\n")
-    if year == ('exit'):
-        exit
-    else:
-        print(df[df["year"] == year])
+    n = 0
+    while n == 0:
+        print("\nYou chose: year search")
+        year = input("What year do you want to search for? type 'back' to return to category selector\n")
+        if year == ('back'):
+            n = 1
+        else:
+            print(df[df["year"] == year])
 
 # search type
 def search_type(type):
